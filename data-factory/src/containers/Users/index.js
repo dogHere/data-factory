@@ -1,1 +1,0 @@
-export UserTablePage from './UserTablePage'
