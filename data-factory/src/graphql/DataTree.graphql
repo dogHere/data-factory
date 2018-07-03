@@ -1,0 +1,29 @@
+query DefineTables($app_id: String!) {
+  DefineTables (app_id: $app_id){
+    id
+    name
+    type
+    column_num
+    row_num
+    create_time
+    update_time
+    owner
+    fields_info {
+      fid
+      fname
+      ftype
+      fvalue
+      funion
+      fdefault
+      fexpression
+    }
+    relation {
+      table_id
+      table_type
+      relation_type
+      left_key
+      right_key
+    }
+  }
+}
+

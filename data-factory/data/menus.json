@@ -1,0 +1,34 @@
+{
+  "success": true,
+  "data": {
+    "items": [
+      {
+        "id": 1,
+        "link": "/",
+        "title": "Dashboard"
+      },
+      {
+        "id": 2,
+        "link": "/users",
+        "title": "Users"
+      },
+      {
+        "id": 3,
+        "link": "/posts",
+        "title": "Posts"
+      },
+      {
+        "id": 4,
+        "link": "",
+        "title": "Charts",
+        "children": [
+          {
+            "id": 1,
+            "link": "/chart/line-charts",
+            "title": "LineChart"
+          }
+        ]
+      }
+    ]
+  }
+}
