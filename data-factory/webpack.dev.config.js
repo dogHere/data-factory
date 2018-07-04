@@ -21,7 +21,7 @@ const config = {
     proxy: {
       '/graphql': {
         changeOrigin: true,
-        target: 'http://action3.kmtongji.com/public',
+        target: 'http://localhost:4000',
         secure: false
       }
     }

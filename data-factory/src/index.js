@@ -34,5 +34,5 @@ const history = syncHistoryWithStore(hashHistory, store);
 ReactDOM.render((
   <Provider store={store}>
     <Router history={history} routes={routes} />
-  </Provider>
+  </Provider> 
 ), document.getElementById('mount'));

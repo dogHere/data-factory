@@ -24,31 +24,35 @@ class PageSidebar extends Component {
         {
           key: 'sub1',
           icon: 'user',
-          label: 'subnav 1',
+          label: '元数据监控',
           items: [
             {
               key: '1',
-              label: 'option1'
+              label: '数据量状况',
+              link: '/data-source/data-tree'
+
             },
             {
               key: '2',
-              label: 'option2'
+              label: '血缘关系监控',
+              link: '/data-source/lineage'
             }
           ]
         },
         {
           key: 'sub2',
           icon: 'laptop',
-          label: 'subnav 2',
+          label: '元数据管理',
           items: [
             {
               key: '3',
-              label: 'option3'
+              label: '数据库表信息',
+              link: '/data-source/schema'
             },
-            {
-              key: '4',
-              label: 'option4'
-            }
+            // {
+            //   key: '4',
+            //   label: 'option4'
+            // }
           ]
         }
       ]
@@ -58,10 +62,10 @@ class PageSidebar extends Component {
   renderSubMenus() {
     const { menus } = this.state;
     return _.map(menus, menu => (
-      <SubMenu key={menu.key} title={<span><Icon type={menu.icon} />{menu.label}</span>}>
+      <SubMenu key={menu.key} title={<span><Icon type={menu.icon} /> {menu.label}</span>}>
         {
           menu.items ?
-            _.map(menu.items, item => <Menu.Item key={item.key}>{item.label}</Menu.Item>) : null
+            _.map(menu.items, item => <Menu.Item key={item.key}> <Link to={item.link}>{item.label}</Link> </Menu.Item>) : null
         }
       </SubMenu>
       ));

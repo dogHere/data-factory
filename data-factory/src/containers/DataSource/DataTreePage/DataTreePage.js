@@ -3,7 +3,7 @@
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import * as actionCreators from '../../../actions/dataSource';
-import { DataTree } from '../../../components/DataSource';
+import { DataTree } from '../../../components/DataSource/Index';
 
 
 function mapState2Props(state) {
