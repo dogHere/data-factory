@@ -1,9 +1,9 @@
 
-import { FETCH_DATA_TREE } from '../constants/ActionTypes';
-
+import { FETCH_DATA_TREE, FETCH_SCHEMA } from '../constants/ActionTypes';
 
 const initialState = {
-  dataTree: []
+  dataTree: [],
+  schema: []
 };
 
 export default function dataSource(state = initialState, action) {
@@ -12,6 +12,11 @@ export default function dataSource(state = initialState, action) {
       return Object.assign({}, state, {
         status: action.status,
         dataTree: action.response
+      });
+    case FETCH_SCHEMA:
+      return Object.assign({}, state, {
+        status: action.status,
+        schema: action.response
       });
     default:
       return state;

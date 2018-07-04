@@ -59,6 +59,19 @@ class PageSidebar extends Component {
     }
   }
 
+  componentWillMount(){
+    const currentPath = (window.location.hash ||'#').split('#')[1];
+    let targetKey = -1 ;
+    this.state.menus.forEach(k=>{
+      k.items.forEach(sub=>{
+        if(sub.link===currentPath){
+          targetKey = sub.key;
+        }
+      }) 
+    })
+    this.setState({defaultSelectedKeys:[targetKey]});
+  }
+
   renderSubMenus() {
     const { menus } = this.state;
     return _.map(menus, menu => (
@@ -78,8 +91,8 @@ class PageSidebar extends Component {
       <Sider width={200} style={{ background: '#fff' }}>
         <Menu
           mode="inline"
-          defaultSelectedKeys={['1']}
-          defaultOpenKeys={['sub1']}
+          defaultSelectedKeys={this.state.defaultSelectedKeys}
+          defaultOpenKeys={['sub1', 'sub2']}
           style={{ height: '100%', borderRight: 0 }}
         >
           {this.renderSubMenus()}

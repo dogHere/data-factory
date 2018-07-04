@@ -1,0 +1,32 @@
+{
+  TableList {
+    databaseType
+    databaseName
+    tableName
+    owner
+    createTime
+    lastAccessTime
+    protectMode
+    retention
+    location
+    tableType
+    tableParameters
+    transientLastDdlTime
+    lastModifiedBy
+    lastModifiedTime
+    serDeLibrary
+    inputFormat
+    outputFormat
+    compressed
+    numBuckets
+    bucketColumns
+    sortColumns
+    storageDescParams
+    viewOriginalText
+    viewExpandedText
+    showCreateTable
+    create_time
+    update_time
+    md5
+  }
+}
