@@ -33,7 +33,8 @@
     "react-router-redux": "^4.0.5",
     "redux": "^3.5.2",
     "redux-logger": "^2.6.1",
-    "redux-thunk": "^2.1.0"
+    "redux-thunk": "^2.1.0",
+    "viz.js": "^2.0.0"
   },
   "repository": {
     "type": "git",

@@ -1,6 +1,9 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { Table, Input } from 'antd'
+import  Viz from 'viz.js'
+import { Module, render } from 'viz.js/full.render.js';
+
 
 const propTypes = {
   onFetchSchema: PropTypes.func,
@@ -23,6 +26,7 @@ class Schema extends Component {
   componentDidMount() {
     const { onFetchSchema } = this.props;
     onFetchSchema();
+
   }
 
   componentWillReceiveProps(nextProps, nextState) {
@@ -139,7 +143,26 @@ class Schema extends Component {
   }
 
 
+  renderSVGElement=(src,id)=>{
+    let viz = new Viz({ Module, render });
+    viz.renderSVGElement(src)
+    .then(element=> {
+        document.getElementById(id).innerHTML='';
+        document.getElementById(id).appendChild(element);
+    })
+    .catch(error => {
+      // Create a new Viz instance (@see Caveats page for more info)
+      viz = new Viz({ Module, render });
+  
+      // Possibly display the error
+      console.error(error);
+    });
+  }
+
+
   render() {
+
+
 
     const columns = [{
       title: '库',
@@ -185,9 +208,13 @@ class Schema extends Component {
     }
     ];
     const { schema } = this.props;
+
+
+    this.renderSVGElement('digraph { a -> b }')
     return (
       <div>
         <h1>表元数据</h1>
+        
         <Input size="large" placeholder="搜索" style={{ width: '400px' }} onChange={this.handleSearch} />
         <Table
           className="components-table-demo-nested"
@@ -198,7 +225,15 @@ class Schema extends Component {
           expandRowByClick={false}
           onExpand={this.handleExpand}
         />
+
+
+<div>
+          
+</div>
+
       </div>
+      
+     
     )
   }
 }
