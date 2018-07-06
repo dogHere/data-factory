@@ -15,7 +15,6 @@ module.exports = [
       }, {
         loader: 'sass-loader'
       }],
-      // use style-loader in development
       fallback: 'style-loader'
     })
   }, {
@@ -28,9 +27,14 @@ module.exports = [
           importLoaders: 1
         }
       },
-      // use style-loader in development
     ]
-  }, {
+  },
+  {
+    test: /\.(graphql|gql)$/,
+    exclude: /node_modules/,
+    loader: 'graphql-tag/loader'
+  },
+  {
     test: /\.(jpg|png)$/,
     loader: 'url-loader'
   }, {

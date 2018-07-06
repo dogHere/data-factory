@@ -7,7 +7,7 @@ module.exports = [
     'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV)
   }),
   new HtmlwebpackPlugin({
-    title: 'React Antd Admin',
+    title: 'create-app',
     filename: 'index.html',
     template: 'src/index.html',
     theme: 'default',

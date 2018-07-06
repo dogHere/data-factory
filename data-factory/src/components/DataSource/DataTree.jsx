@@ -17,15 +17,11 @@ class DataTree extends Component {
 
   componentDidMount() {
     const { onFetchDataTree } = this.props;
-    onFetchDataTree({
-      variables: { app_id: '5b2cb6c68d17c02d560f8bea' }
-    });
+    onFetchDataTree({ variables: { app_id: '5b2cb6c68d17c02d560f8bea', __DC: true } });
   }
 
   componentWillReceiveProps(nextProps, nextState) {
-    if (nextProps.dataTree) {
-      console.log(nextProps.dataTree, 'nexprops');
-    }
+
   }
 
   render() {

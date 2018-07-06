@@ -8,7 +8,7 @@ function request(options) {
       query: graphql,
       variables,
       ...restOptions
-    })
+    });
   }
   return client.mutate({
     mutation: graphql,
@@ -29,10 +29,6 @@ function callAPIMiddleware({ dispatch, getState }) {
 
     if (!actionType) {
       return next(action)
-    }
-
-    if (typeof type === 'string') {
-      throw new Error('Expected string types.')
     }
 
     if (!shouldCallAPI(getState())) {

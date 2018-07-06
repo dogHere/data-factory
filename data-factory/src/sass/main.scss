@@ -1,33 +1,4 @@
-
 #mount{
   min-height: calc(100vh - 0px);
 }
-.table-content{
-  background: #fff;
-  -webkit-box-shadow: 4px 4px 20px 0 rgba(0, 0, 0, 0.01);
-  box-shadow: 4px 4px 20px 0 rgba(0, 0, 0, 0.01);
-  min-height: calc(100vh - 0px);
-}
-.table-pagination{
-  text-align: center;
-  padding: 10px 0px;
-}
 
-#components-layout-demo-custom-trigger {
-    .trigger {
-      font-size: 18px;
-      line-height: 64px;
-      padding: 0 16px;
-      cursor: pointer;
-      transition: color .3s;
-      &:hover{
-        color: #108ee9;
-      }
-    }
-    .logo{
-      height: 32px;
-      background: #333;
-      border-radius: 6px;
-      margin: 16px;
-    }
-}

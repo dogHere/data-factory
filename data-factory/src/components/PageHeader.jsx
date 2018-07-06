@@ -1,7 +1,5 @@
 import React, { Component } from 'react'
-import PropTypes from 'prop-types'
-import { Link } from 'react-router'
-import { Layout, Icon } from 'antd'
+import { Layout } from 'antd'
 
 const { Header } = Layout
 
