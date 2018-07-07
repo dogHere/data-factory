@@ -5,9 +5,7 @@ import DataTree from './DataTreePage';
 class DataTreePage extends Component {
   render() {
     return (
-      <Frame
-        hideSidebar
-      >
+      <Frame>
         {this.props.children || <DataTree />}
       </Frame>
     );

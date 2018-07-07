@@ -1,20 +1,9 @@
 import React, { Component } from 'react'
-import PropTypes from 'prop-types'
 import { Layout, Menu, Icon } from 'antd'
 import _ from 'lodash';
-import { Link } from 'react-router'
 
 const { Sider } = Layout
 const { SubMenu } = Menu
-
-
-const propTypes = {
-  collapsed: PropTypes.bool
-}
-
-const contextTypes = {
-  menus: PropTypes.array
-}
 
 class PageSidebar extends Component {
   constructor(props) {
@@ -22,7 +11,7 @@ class PageSidebar extends Component {
     this.state = {
       menus: [
         {
-          key: 'sub1',
+          key: 'dataSource',
           icon: 'user',
           label: '元数据监控',
           items: [
@@ -48,11 +37,7 @@ class PageSidebar extends Component {
               key: '3',
               label: '数据库表信息',
               link: '/data-source/schema'
-            },
-            // {
-            //   key: '4',
-            //   label: 'option4'
-            // }
+            }
           ]
         }
       ]
@@ -85,8 +70,6 @@ class PageSidebar extends Component {
   }
 
   render() {
-    const { menus } = this.context;
-    const { collapsed } = this.props;
     return (
       <Sider width={200} style={{ background: '#fff' }}>
         <Menu
@@ -101,8 +84,5 @@ class PageSidebar extends Component {
     )
   }
 }
-
-PageSidebar.propTypes = propTypes;
-PageSidebar.contextTypes = contextTypes;
 
 export default PageSidebar

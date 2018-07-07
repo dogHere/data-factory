@@ -33,12 +33,7 @@ const config = {
   ],
   module: {
     rules: [
-      ...commonRules,
-      {
-        test: /\.(graphql|gql)$/,
-        exclude: /node_modules/,
-        loader: 'graphql-tag/loader'
-      }
+      ...commonRules
     ]
   },
   resolve: {

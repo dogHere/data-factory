@@ -7,14 +7,12 @@ import App from '../components/App';
 function mapState2Props(state) {
   const currentState = state.store.common;
   return {
-    menus: currentState.menus
   };
 }
 
 function mapDispatch2Props(dispatch) {
   const actions = bindActionCreators(actionCreators, dispatch)
   return {
-    fetchMenu: actions.fetchMenus
   }
 }
 

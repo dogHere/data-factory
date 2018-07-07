@@ -6,32 +6,13 @@ import PageSidebar from './PageSidebar'
 
 const { Content } = Layout
 
-const propTypes = {
-  activeItem: PropTypes.string,
-  hideSidebar: PropTypes.bool,
-  hideHeader: PropTypes.bool,
-};
-
 const contextTypes = {
   router: PropTypes.object.isRequired,
-  menus: PropTypes.array
-};
-
-const defaultProps = {
-  headerProps: {}
 };
 
 class Frame extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      collapsed: false
-    }
-  }
-
   render() {
     const { children } = this.props;
-
     return (
       <Layout>
         {<PageHeader />}
@@ -53,7 +34,5 @@ class Frame extends Component {
   }
 }
 
-Frame.propTypes = propTypes;
 Frame.contextTypes = contextTypes;
-Frame.defaultProps = defaultProps;
 export default Frame;

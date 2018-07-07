@@ -1,6 +1,6 @@
 module.exports = {
   path: 'data-tree',
   getComponent(nextState, cb) {
-    cb(null, require('../../containers/DataSource/DataTreePage').DataTreePage);
+    cb(null, require('../../containers/DataSource/DataTreePage').default);
   }
 };
